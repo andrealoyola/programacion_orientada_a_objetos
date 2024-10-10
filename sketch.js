@@ -39,3 +39,23 @@ function draw() {
   fill(255);
   noStroke();
 }
+
+class Pelota{
+    //plano de instrucciones para crear una pelota
+    constructor(){
+        this.posX = random(rad, width)
+        this.posY
+        this.velX
+        this.velY
+        this.radio =
+        this.diametro =
+
+    }
+
+    //metodo update
+    update(){
+
+    }
+}
+//nombre debe empezar con mayuscula siempre,no tiene ()
+// this -- eesta solo dentro de este objeto no dentro del todo el doc
