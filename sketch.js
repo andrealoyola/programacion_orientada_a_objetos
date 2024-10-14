@@ -4,6 +4,17 @@ let pelotas = [];
 function setup() {
   createCanvas(windowWidth, windowHeight);
   bg = color(random(150, 0, 230), random(70, 0, 240), random(100, 10, 180));
+  //circulo admite (posX, posY y diametro)
+  // for(let x = 20; x < width, x+=20){ **la variable x puede llamarse como nos de la gana
+  //     circle(x, 20, 10);
+  //     circle(20, x, 10); *circulos se irian para abajo
+  //     circle(x, x, 10); *circulos aárecen de manera diagonal, aumenta de igual manera en sentido de las x y las y
+  // for(let x = 20; x < width, x+=50) ** existiria mas espacio entre los circulos
+  //for loop anidado
+  //for(let x = 20; x < width, x+=20){
+  //    for(let y = 20; y < height; y +=20){
+  //        circle(x, y, random(2, 10)); // function set up, en function draw, todos los circulos cambian de tamaño
+  // let
   for (let i = 0; i < 100; i++) {
     let nuevaPelota = new Pelota();
     pelotas.push(nuevaPelota);
@@ -11,6 +22,7 @@ function setup() {
 }
 
 function draw() {
+  // space = mouseX + 1;
   background(bg);
   for (let i = 0; i < 100; i++) {
     pelotas[i].update();
