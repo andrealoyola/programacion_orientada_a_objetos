@@ -1,61 +1,50 @@
-let posX, posY;
-let velX, velY; //velocidad
-let diametro;
-let radio;
 let bg;
+let pelotas = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
-  radio = ceil(random(20, 50));
-  diametro = radio * 2;
-  posX = random(radio, width - radio);
-  posY = random(radio, height - radio);
-  velX = 6;
-  velY = 6;
   bg = color(random(150, 0, 230), random(70, 0, 240), random(100, 10, 180));
-
-  //velX = random(-10, 10)
-  //velY = random(-10, 10)
+  for (let i = 0; i < 100; i++) {
+    let nuevaPelota = new Pelota();
+    pelotas.push(nuevaPelota);
+  }
 }
 
 function draw() {
   background(bg);
-  posX += velX;
-  posY += velY;
-
-  //if (posX > width - radio || posX < radio)
-  //if(4<10 && 5>20) las 2 deben ser verdaderas para que se ejecute - || = OR basta que una de las 2 sea verdadera
-  if (posX > width - radio || posX < radio) {
-    velX *= -1;
-    bg = color(random(150, 0, 230), random(70, 0, 240), random(100, 10, 180));
-    //console.log("se fueeeee");
+  for (let i = 0; i < 100; i++) {
+    pelotas[i].update();
+    pelotas[i].display();
   }
-  if (posY > height - radio || posY < radio) {
-    velY *= -1;
-    bg = color(random(150, 0, 230), random(70, 0, 240), random(100, 10, 180));
-  }
-  circle(posX, posY, diametro);
-  fill(255);
-  noStroke();
 }
 
-class Pelota{
-    //plano de instrucciones para crear una pelota
-    constructor(){
-        this.posX = random(rad, width)
-        this.posY
-        this.velX
-        this.velY
-        this.radio =
-        this.diametro =
+class Pelota {
+  // Plano de instrucciones para creae una pelota
+  constructor() {
+    this.rad = ceil(random(5, 30));
+    this.diam = this.rad * 2;
+    this.posX = random(this.rad, width - this.rad);
+    this.posY = random(this.rad, height - this.rad);
+    this.velX = random(-10, 10);
+    this.velY = random(-10, 10);
+    console.log("estoy viaaaaa!");
+  }
+  // método update
+  update() {
+    this.posX += this.velX;
+    this.posY += this.velY;
 
+    if (this.posX > width - this.rad || this.posX < this.rad) {
+      this.velX *= -1;
     }
-
-    //metodo update
-    update(){
-
+    if (this.posY > height - this.rad || this.posY < this.rad) {
+      this.velY *= -1;
     }
+  }
+
+  display() {
+    fill(255);
+    noStroke();
+    circle(this.posX, this.posY, this.diam);
+  }
 }
-//nombre debe empezar con mayuscula siempre,no tiene ()
-// this -- eesta solo dentro de este objeto no dentro del todo el doc
