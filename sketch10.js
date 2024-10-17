@@ -9,11 +9,7 @@ function draw() {
 
   // Crear nuevas partículas aleatoriamente
   if (frameCount % 5 === 0) {
-    if (random() < 0.5) {
-      particulas.push(new ParticulaAmarilla(random(width), random(height)));
-    } else {
-      particulas.push(new ParticulaBlanca(random(width), random(height)));
-    }
+    particulas.push(new Particula(random(width), random(height)));
   }
 
   // Actualizar y mostrar todas las partículas
