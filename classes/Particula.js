@@ -33,3 +33,10 @@ class ParticulaBlanca extends Particula {
     circle(this.x, this.y, this.size1); // Dibujar la partícula
   }
 }
+
+class ParticulaRecta extends Particula {
+  display() {
+    fill(0, 100, 250, this.tVida); // Color blanco
+    circle(this.x, this.y, this.size1); // Dibujar la partícula
+  }
+}
