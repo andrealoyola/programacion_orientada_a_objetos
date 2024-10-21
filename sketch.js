@@ -14,7 +14,7 @@ function draw() {
   background(0);
 
   // Crear nuevas partículas aleatoriamente
-  if (frameCount % 5 === 0) {
+  if (frameCount % 5 == 0) {
     if (random() < 0.5) {
       particulas.push(new ParticulaVioleta(random(width), random(height)));
     } else {
